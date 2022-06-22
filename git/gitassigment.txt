@@ -1,0 +1,331 @@
+1.Git-version.
+
+2. Make a diretry-mkdir site
+
+3. Change the path-cd site
+
+4. Empty git Repository installation-git init
+
+5. Check git status
+
+6. Open the git folder directory like c/users/site
+
+7. Open test folder and create hello world file
+
+8 Add the helloworld file into git-Git add index.html
+
+9. Git commit-m "commit Name" like git commit m "Commit First html file", it's means save
+
+the local repo
+
+10. Connect the local repository to remote repo
+
+11. Git config global user name raghavpa
+
+12. git remote add origin https://github.com/Raghavpa/travel.git
+ 
+13. git push origin master-means push the all files under the test folder
+
+
+1.
+
+HP@DESKTOP-BM37ID4 MINGW64 ~
+$  git --version
+git version 2.36.1.windows.1
+
+HP@DESKTOP-BM37ID4 MINGW64 ~
+$ mkdir test
+
+HP@DESKTOP-BM37ID4 MINGW64 ~
+$ cd test
+
+HP@DESKTOP-BM37ID4 MINGW64 ~/test
+$ git init
+Initialized empty Git repository in C:/Users/HP/test/.git/
+
+HP@DESKTOP-BM37ID4 MINGW64 ~/test (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        demo.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+HP@DESKTOP-BM37ID4 MINGW64 ~/test (master)
+$ git add demo.test
+fatal: pathspec 'demo.test' did not match any files
+
+HP@DESKTOP-BM37ID4 MINGW64 ~/test (master)
+$ git add demo.txt
+
+HP@DESKTOP-BM37ID4 MINGW64 ~/test (master)
+$ git commit -m "commiting a text file"
+[master (root-commit) 8eecdab] commiting a text file
+ 1 file changed, 1 insertion(+)
+ create mode 100644 demo.txt
+
+HP@DESKTOP-BM37ID4 MINGW64 ~/test (master)
+$ git config --global user.username raghavpa
+
+HP@DESKTOP-BM37ID4 MINGW64 ~/test (master)
+$ git remote add origin https://github.com/Raghavpa/test_demo.git^C
+
+HP@DESKTOP-BM37ID4 MINGW64 ~/test (master)
+$ git origin master
+git: 'origin' is not a git command. See 'git --help'.
+
+HP@DESKTOP-BM37ID4 MINGW64 ~/test (master)
+$ git push origin master
+fatal: 'origin' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+HP@DESKTOP-BM37ID4 MINGW64 ~/test (master)
+$ git push origin master
+fatal: 'origin' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+2.
+HP@DESKTOP-BM37ID4 MINGW64 ~/test (master)
+$ git remote origin https://github.com/Raghavpa/test_demo.git
+error: Unknown subcommand: origin
+usage: git remote [-v | --verbose]
+   or: git remote add [-t <branch>] [-m <master>] [-f] [--tags | --no-tags] [--mirror=<fetch|push>] <name> <url>
+   or: git remote rename [--[no-]progress] <old> <new>
+   or: git remote remove <name>
+   or: git remote set-head <name> (-a | --auto | -d | --delete | <branch>)
+   or: git remote [-v | --verbose] show [-n] <name>
+   or: git remote prune [-n | --dry-run] <name>
+   or: git remote [-v | --verbose] update [-p | --prune] [(<group> | <remote>)...]
+   or: git remote set-branches [--add] <name> <branch>...
+   or: git remote get-url [--push] [--all] <name>
+   or: git remote set-url [--push] <name> <newurl> [<oldurl>]
+   or: git remote set-url --add <name> <newurl>
+   or: git remote set-url --delete <name> <url>
+
+    -v, --verbose         be verbose; must be placed before a subcommand
+
+
+HP@DESKTOP-BM37ID4 MINGW64 ~/test (master)
+$ git push origin master
+fatal: 'origin' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+HP@DESKTOP-BM37ID4 MINGW64 ~/test (master)
+$ git remote origin https://github.com/Raghavpa/test_demo.git
+error: Unknown subcommand: origin
+usage: git remote [-v | --verbose]
+   or: git remote add [-t <branch>] [-m <master>] [-f] [--tags | --no-tags] [--mirror=<fetch|push>] <name> <url>
+   or: git remote rename [--[no-]progress] <old> <new>
+   or: git remote remove <name>
+   or: git remote set-head <name> (-a | --auto | -d | --delete | <branch>)
+   or: git remote [-v | --verbose] show [-n] <name>
+   or: git remote prune [-n | --dry-run] <name>
+   or: git remote [-v | --verbose] update [-p | --prune] [(<group> | <remote>)...]
+   or: git remote set-branches [--add] <name> <branch>...
+   or: git remote get-url [--push] [--all] <name>
+   or: git remote set-url [--push] <name> <newurl> [<oldurl>]
+   or: git remote set-url --add <name> <newurl>
+   or: git remote set-url --delete <name> <url>
+
+    -v, --verbose         be verbose; must be placed before a subcommand
+
+
+HP@DESKTOP-BM37ID4 MINGW64 ~/test (master)
+$ git  remote add origin https://github.com/Raghavpa/test_demo.git
+
+HP@DESKTOP-BM37ID4 MINGW64 ~/test (master)
+$ git push origin master
+fatal: helper error (-1): User cancelled dialog.
+error: unable to read askpass response from 'C:/Program Files/Git/mingw64/bin/git-askpass.exe'
+Username for 'https://github.com': raghavpa
+Raghavremote: Support for password authentication was removed on August 13, 2021. Please use a personal access token instead.
+remote: Please see https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/ for more information.
+fatal: Authentication failed for 'https://github.com/Raghavpa/test_demo.git/'
+
+HP@DESKTOP-BM37ID4 MINGW64 ~/test (master)
+$ git push origin master
+
+Unhandled Exception: System.ComponentModel.Win32Exception: Invalid window handle
+   at MS.Win32.ManagedWndProcTracker.HookUpDefWindowProc(IntPtr hwnd)
+   at MS.Win32.ManagedWndProcTracker.OnAppDomainProcessExit()
+   at MS.Internal.ShutDownListener.HandleShutDown(Object sender, EventArgs e)
+raEnumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 248 bytes | 248.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Raghavpa/test_demo.git
+ * [new branch]      master -> master
+
+
+
+
+
+
+
+
+3.
+
+HP@DESKTOP-BM37ID4 MINGW64 ~/test (master)
+HP@DESKTOP-BM37ID4 MINGW64 ~/test (master)
+$ git --version
+git version 2.36.1.windows.1
+
+HP@DESKTOP-BM37ID4 MINGW64 ~/test (master)
+$ git config --global user.name "raghavpa"
+
+HP@DESKTOP-BM37ID4 MINGW64 ~/test (master)
+$ git config -- global user.email "raghavendra-r.patil@capgemini.com"
+error: key does not contain a section: global
+
+HP@DESKTOP-BM37ID4 MINGW64 ~/test (master)
+$ git config --global user.email "^C
+
+HP@DESKTOP-BM37ID4 MINGW64 ~/test (master)
+$  git config --global user.email  "raghavendra-r.patil@capgemini.com"
+
+HP@DESKTOP-BM37ID4 MINGW64 ~/test (master)
+$ cd /c/Users/HP/OneDrive/Desktop/site
+
+HP@DESKTOP-BM37ID4 MINGW64 ~/OneDrive/Desktop/site
+$ mkdir "hello-world"
+
+HP@DESKTOP-BM37ID4 MINGW64 ~/OneDrive/Desktop/site
+$ cd hello-world
+
+HP@DESKTOP-BM37ID4 MINGW64 ~/OneDrive/Desktop/site/hello-world
+$ git init
+Initialized empty Git repository in C:/Users/HP/OneDrive/Desktop/site/hello-world/.git/
+
+HP@DESKTOP-BM37ID4 MINGW64 ~/OneDrive/Desktop/site/hello-world (master)
+$ touch "index.html"
+
+HP@DESKTOP-BM37ID4 MINGW64 ~/OneDrive/Desktop/site/hello-world (master)
+$ git add index.html
+
+HP@DESKTOP-BM37ID4 MINGW64 ~/OneDrive/Desktop/site/hello-world (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   index.html
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+
+HP@DESKTOP-BM37ID4 MINGW64 ~/OneDrive/Desktop/site/hello-world (master)
+$ git remote -v
+
+HP@DESKTOP-BM37ID4 MINGW64 ~/OneDrive/Desktop/site/hello-world (master)
+$ git remote set-url origin https://github.com/Raghavpa/test_demo.git
+error: No such remote 'origin'
+
+HP@DESKTOP-BM37ID4 MINGW64 ~/OneDrive/Desktop/site/hello-world (master)
+$ git remote set-url origin https://github.com/Raghavpa/travel.git
+error: No such remote 'origin'
+
+HP@DESKTOP-BM37ID4 MINGW64 ~/OneDrive/Desktop/site/hello-world (master)
+$ git add -A
+
+HP@DESKTOP-BM37ID4 MINGW64 ~/OneDrive/Desktop/site/hello-world (master)
+$  git remote set-url origin https://github.com/Raghavpa/travel.git
+error: No such remote 'origin'
+
+HP@DESKTOP-BM37ID4 MINGW64 ~/OneDrive/Desktop/site/hello-world (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   index.html
+
+
+HP@DESKTOP-BM37ID4 MINGW64 ~/OneDrive/Desktop/site/hello-world (master)
+$ git commit -m 'first commit'
+[master (root-commit) 8e73d51] first commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 index.html
+
+HP@DESKTOP-BM37ID4 MINGW64 ~/OneDrive/Desktop/site/hello-world (master)
+$ git push origin master
+fatal: 'origin' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+HP@DESKTOP-BM37ID4 MINGW64 ~/OneDrive/Desktop/site/hello-world (master)
+$ git remote add origin https://github.com/Raghavpa/travel.git
+
+HP@DESKTOP-BM37ID4 MINGW64 ~/OneDrive/Desktop/site/hello-world (master)
+$ git push origin master
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 237 bytes | 237.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Raghavpa/travel.git
+ * [new branch]      master -> master
+
+HP@DESKTOP-BM37ID4 MINGW64 ~/OneDrive/Desktop/site/hello-world (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+HP@DESKTOP-BM37ID4 MINGW64 ~/OneDrive/Desktop/site/hello-world (master)
+$ git commit -m 'second commit'
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+HP@DESKTOP-BM37ID4 MINGW64 ~/OneDrive/Desktop/site/hello-world (master)
+$ git add -A
+
+HP@DESKTOP-BM37ID4 MINGW64 ~/OneDrive/Desktop/site/hello-world (master)
+$ git commit -m
+error: switch `m' requires a value
+
+HP@DESKTOP-BM37ID4 MINGW64 ~/OneDrive/Desktop/site/hello-world (master)
+$ git commit -m 'second commit'
+[master 3a76600] second commit
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+HP@DESKTOP-BM37ID4 MINGW64 ~/OneDrive/Desktop/site/hello-world (master)
+$ git push origin master
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Writing objects: 100% (3/3), 280 bytes | 280.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Raghavpa/travel.git
+   8e73d51..3a76600  master -> master
+
+HP@DESKTOP-BM37ID4 MINGW64 ~/OneDrive/Desktop/site/hello-world (master)
+$
