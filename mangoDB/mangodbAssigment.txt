@@ -1,0 +1,132 @@
+Microsoft Windows [Version 10.0.19044.1706]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\HP>mongo
+MongoDB shell version v5.0.9
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("cb176e41-a2ef-4b3a-b2f4-74592aca171c") }
+MongoDB server version: 5.0.9
+================
+Warning: the "mongo" shell has been superseded by "mongosh",
+which delivers improved usability and compatibility.The "mongo" shell has been deprecated and will be removed in
+an upcoming release.
+For installation instructions, see
+https://docs.mongodb.com/mongodb-shell/install/
+================
+Welcome to the MongoDB shell.
+For interactive help, type "help".
+For more comprehensive documentation, see
+        https://docs.mongodb.com/
+Questions? Try the MongoDB Developer Community Forums
+        https://community.mongodb.com
+---
+The server generated these startup warnings when booting:
+        2022-06-21T00:21:14.207-07:00: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+        2022-06-21T00:21:14.208-07:00: This server is bound to localhost. Remote systems will be unable to connect to this server. Start the server with --bind_ip <address> to specify which IP addresses it should serve responses from, or with --bind_ip_all to bind to all interfaces. If this behavior is desired, start the server with --bind_ip 127.0.0.1 to disable this warning
+---
+---
+        Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+        metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+        The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+        and anyone you share the URL with. MongoDB may use this information to make product
+        improvements and to suggest MongoDB products and deployment options to you.
+
+        To enable free monitoring, run the following command: db.enableFreeMonitoring()
+        To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+---
+> show dbs
+admin   0.000GB
+config  0.000GB
+local   0.000GB
+> use users;
+switched to db users
+> db.createCollecction("movies")
+uncaught exception: TypeError: db.createCollecction is not a function :
+@(shell):1:1
+> db.createCollection("movies")
+{ "ok" : 1 }
+> db.movies.insertMany([{
+...          title : "Fight Club",
+...           writer : "Chuck Palahniuko",
+...            year : 1999,
+...             actors : [ "Brad Pitt", "Edward Norton" ]
+...     },
+...      {
+...          title : "Pulp Fiction",
+...           writer : "Quentin Tarantino",
+...            year : 1994,
+...             actors : [ "John Travolta", "Uma Thurman" ]
+...      },{
+...
+...      title : "Inglorious Basterds",
+...       writer : "Quentin Tarantino",
+...        year : 2009,
+...         actors : [ "Brad Pitt", "Diane Kruger", "Eli Roth" ]
+...      },
+...      {title : "The Hobbit: An Unexpected Journey",
+...           writer : "J.R.R. Tolkein",
+...            year : 2012,
+...             franchise : "The Hobbit"
+...
+...      },
+...      {
+...          title : "The Hobbit: The Desolation of Smaug",
+...           writer : "J.R.R. Tolkein",
+...      year : 2013,
+...       franchise : "The Hobbit"
+...      },
+...      {
+...          title : "The Hobbit: The Battle of the Five Armies",
+...           writer : "J.R.R. Tolkein",
+...            year : 2012,
+...              synopsis : "Bilbo and Company are forced to engage in a war against an array of combatants and keep the Lonely Mountain from falling into the hands of a rising darkness."
+...      },
+...      {
+...          title : "Pee Wee Herman's Big Adventure"
+...      },
+...      {
+...          title : "Avatar"
+...      }
+...      ])
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("62b1832f0338e5c83b6c9baa"),
+                ObjectId("62b1832f0338e5c83b6c9bab"),
+                ObjectId("62b1832f0338e5c83b6c9bac"),
+                ObjectId("62b1832f0338e5c83b6c9bad"),
+                ObjectId("62b1832f0338e5c83b6c9bae"),
+                ObjectId("62b1832f0338e5c83b6c9baf"),
+                ObjectId("62b1832f0338e5c83b6c9bb0"),
+                ObjectId("62b1832f0338e5c83b6c9bb1")
+        ]
+}
+> db.movies.find()
+{ "_id" : ObjectId("62b1832f0338e5c83b6c9baa"), "title" : "Fight Club", "writer" : "Chuck Palahniuko", "year" : 1999, "actors" : [ "Brad Pitt", "Edward Norton" ] }
+{ "_id" : ObjectId("62b1832f0338e5c83b6c9bab"), "title" : "Pulp Fiction", "writer" : "Quentin Tarantino", "year" : 1994, "actors" : [ "John Travolta", "Uma Thurman" ] }
+{ "_id" : ObjectId("62b1832f0338e5c83b6c9bac"), "title" : "Inglorious Basterds", "writer" : "Quentin Tarantino", "year" : 2009, "actors" : [ "Brad Pitt", "Diane Kruger", "Eli Roth" ] }
+{ "_id" : ObjectId("62b1832f0338e5c83b6c9bad"), "title" : "The Hobbit: An Unexpected Journey", "writer" : "J.R.R. Tolkein", "year" : 2012, "franchise" : "The Hobbit" }
+{ "_id" : ObjectId("62b1832f0338e5c83b6c9bae"), "title" : "The Hobbit: The Desolation of Smaug", "writer" : "J.R.R. Tolkein", "year" : 2013, "franchise" : "The Hobbit" }
+{ "_id" : ObjectId("62b1832f0338e5c83b6c9baf"), "title" : "The Hobbit: The Battle of the Five Armies", "writer" : "J.R.R. Tolkein", "year" : 2012, "synopsis" : "Bilbo and Company are forced to engage in a war against an array of combatants and keep the Lonely Mountain from falling into the hands of a rising darkness." }
+{ "_id" : ObjectId("62b1832f0338e5c83b6c9bb0"), "title" : "Pee Wee Herman's Big Adventure" }
+{ "_id" : ObjectId("62b1832f0338e5c83b6c9bb1"), "title" : "Avatar" }
+> db.movies.find({writer:"Quentin Tarantino"})
+{ "_id" : ObjectId("62b1832f0338e5c83b6c9bab"), "title" : "Pulp Fiction", "writer" : "Quentin Tarantino", "year" : 1994, "actors" : [ "John Travolta", "Uma Thurman" ] }
+{ "_id" : ObjectId("62b1832f0338e5c83b6c9bac"), "title" : "Inglorious Basterds", "writer" : "Quentin Tarantino", "year" : 2009, "actors" : [ "Brad Pitt", "Diane Kruger", "Eli Roth" ] }
+> db.movies.find({actors:"Brad Pitt"})
+{ "_id" : ObjectId("62b1832f0338e5c83b6c9baa"), "title" : "Fight Club", "writer" : "Chuck Palahniuko", "year" : 1999, "actors" : [ "Brad Pitt", "Edward Norton" ] }
+{ "_id" : ObjectId("62b1832f0338e5c83b6c9bac"), "title" : "Inglorious Basterds", "writer" : "Quentin Tarantino", "year" : 2009, "actors" : [ "Brad Pitt", "Diane Kruger", "Eli Roth" ] }
+> db.movies.find({franchise:"The Hobbit"})
+{ "_id" : ObjectId("62b1832f0338e5c83b6c9bad"), "title" : "The Hobbit: An Unexpected Journey", "writer" : "J.R.R. Tolkein", "year" : 2012, "franchise" : "The Hobbit" }
+{ "_id" : ObjectId("62b1832f0338e5c83b6c9bae"), "title" : "The Hobbit: The Desolation of Smaug", "writer" : "J.R.R. Tolkein", "year" : 2013, "franchise" : "The Hobbit" }
+> db.movies.find({$and:[{year:{$gte:1990}},{year:{$lt:2000}}]})
+{ "_id" : ObjectId("62b1832f0338e5c83b6c9baa"), "title" : "Fight Club", "writer" : "Chuck Palahniuko", "year" : 1999, "actors" : [ "Brad Pitt", "Edward Norton" ] }
+{ "_id" : ObjectId("62b1832f0338e5c83b6c9bab"), "title" : "Pulp Fiction", "writer" : "Quentin Tarantino", "year" : 1994, "actors" : [ "John Travolta", "Uma Thurman" ] }
+> db.movies.find({$or:[{year:{$gte:2010}},{year:{$lt:2000}}]})
+{ "_id" : ObjectId("62b1832f0338e5c83b6c9baa"), "title" : "Fight Club", "writer" : "Chuck Palahniuko", "year" : 1999, "actors" : [ "Brad Pitt", "Edward Norton" ] }
+{ "_id" : ObjectId("62b1832f0338e5c83b6c9bab"), "title" : "Pulp Fiction", "writer" : "Quentin Tarantino", "year" : 1994, "actors" : [ "John Travolta", "Uma Thurman" ] }
+{ "_id" : ObjectId("62b1832f0338e5c83b6c9bad"), "title" : "The Hobbit: An Unexpected Journey", "writer" : "J.R.R. Tolkein", "year" : 2012, "franchise" : "The Hobbit" }
+{ "_id" : ObjectId("62b1832f0338e5c83b6c9bae"), "title" : "The Hobbit: The Desolation of Smaug", "writer" : "J.R.R. Tolkein", "year" : 2013, "franchise" : "The Hobbit" }
+{ "_id" : ObjectId("62b1832f0338e5c83b6c9baf"), "title" : "The Hobbit: The Battle of the Five Armies", "writer" : "J.R.R. Tolkein", "year" : 2012, "synopsis" : "Bilbo and Company are forced to engage in a war against an array of combatants and keep the Lonely Mountain from falling into the hands of a rising darkness." }
+>
